@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sky Gaming - Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Navigation Bar -->
+<header class="navbar">
+  <div class="nav-container">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/logo.png" alt="Sky Gaming Store">
+    </div>
+
+    <!-- Menu -->
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <!-- <a href="tournaments.html">Tournaments</a> -->
+      <!-- <a href="topup.html">Top-Up</a> -->
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Hamburger -->
+    <div class="menu-icon" onclick="toggleMenu()">
+      ☰
+    </div>
+
+  </div>
+</header>
+
+
+<section class="store-page">
+
+  <!-- Page Header -->
+  <div class="store-header">
+    <h1>Game Store</h1>
+    <p>SHOWCASE ONLY</p>
+  </div>
+
+  <!-- Sort Bar -->
+  <div class="store-controls">
+    <span>Showing all products</span>
+    <select id="sortSelect" onchange="sortProducts()">
+      <option value="">Sort by</option>
+      <option value="priceLow">Price: Low to High</option>
+      <option value="priceHigh">Price: High to Low</option>
+      <option value="name">Name: A–Z</option>
+    </select>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="shop-grid">
+
+    <div class="shop-card"
+      data-name="Efootball ID"
+      data-price="25"
+      data-desc="Full access account with premium players"
+      data-images="images/id1.jpg,images/id2.jpg,images/id1.jpg">
+
+      <img src="images/id1.jpg" alt="Efootball ID">
+      <h3>Efootball ID</h3>
+      <p class="price">$25</p>
+
+      <button class="btn" onclick="viewProduct(this)">View Product</button>
+    </div>
+
+
+    <div class="shop-card"
+      data-name="Premium ID"
+      data-price="30"
+      data-desc="Premium account with extra features"
+      data-images="images/id2.jpg,images/id1.jpg">
+
+      <img src="images/id2.jpg" alt="Premium ID">
+      <h3>Premium ID</h3>
+      <p class="price">$30</p>
+
+      <button class="btn" onclick="viewProduct(this)">View Product</button>
+    </div>
+
+    <div class="shop-card"
+      data-name="Premium ID"
+      data-price="60"
+      data-desc="Premium account with special benefits"
+      data-images="images/id2.jpg,images/id2-2.jpg">
+
+      <img src="images/id2.jpg" alt="Premium ID">
+      <h3>Premium ID</h3>
+      <p class="price">$60</p>
+
+      <button class="btn" onclick="viewProduct(this)">View Product</button>
+    </div>
+
+    <div class="shop-card"
+      data-name="Premium ID"
+      data-price="100"
+      data-desc="Elite account for competitive play"
+      data-images="images/id2.jpg,images/id1.jpg">
+
+      <img src="images/id2.jpg" alt="Premium ID">
+      <h3>Premium ID</h3>
+      <p class="price">$100</p>
+
+      <button class="btn" onclick="viewProduct(this)">View Product</button>
+    </div>
+
+    <div class="shop-card"
+      data-name="Premium ID"
+      data-price="200"
+      data-desc="Ultimate account with all features"
+      data-images="images/id2.jpg,images/id1.jpg">
+
+      <img src="images/id2.jpg" alt="Premium ID">
+      <h3>Premium ID</h3>
+      <p class="price">$200</p>
+
+      <button class="btn" onclick="viewProduct(this)">View Product</button>
+    </div>
+
+        <div class="shop-card"
+      data-name="Premium ID"
+      data-price="200"
+      data-desc="Ultimate account with all features"
+      data-images="images/id2.jpg,images/id1.jpg">
+
+      <img src="images/id2.jpg" alt="Premium ID">
+      <h3>Premium ID</h3>
+      <p class="price">$200</p>
+
+      <button class="btn" onclick="viewProduct(this)">View Product</button>
+    </div>
+
+        <div class="shop-card"
+      data-name="Premium ID"
+      data-price="200"
+      data-desc="Ultimate account with all features"
+      data-images="images/id2.jpg,images/id1.jpg">
+
+      <img src="images/id2.jpg" alt="Premium ID">
+      <h3>Premium ID</h3>
+      <p class="price">$200</p>
+
+      <button class="btn" onclick="viewProduct(this)">View Product</button>
+    </div>
+
+        <div class="shop-card"
+      data-name="Premium ID"
+      data-price="200"
+      data-desc="Ultimate account with all features"
+      data-images="images/id2.jpg,images/id1.jpg">
+
+      <img src="images/id2.jpg" alt="Premium ID">
+      <h3>Premium ID</h3>
+      <p class="price">$200</p>
+
+      <button class="btn" onclick="viewProduct(this)">View Product</button>
+    </div>
+
+        <div class="shop-card"
+      data-name="Premium ID"
+      data-price="200"
+      data-desc="Ultimate account with all features"
+      data-images="images/id2.jpg,images/id1.jpg">
+
+      <img src="images/id2.jpg" alt="Premium ID">
+      <h3>Premium ID</h3>
+      <p class="price">$200</p>
+
+      <button class="btn" onclick="viewProduct(this)">View Product</button>
+    </div>
+
+        <div class="shop-card"
+      data-name="Premium ID"
+      data-price="200"
+      data-desc="Ultimate account with all features"
+      data-images="images/id2.jpg,images/id1.jpg">
+
+      <img src="images/id2.jpg" alt="Premium ID">
+      <h3>Premium ID</h3>
+      <p class="price">$200</p>
+
+      <button class="btn" onclick="viewProduct(this)">View Product</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCT MODAL -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+
+    <img id="modalMainImg">
+
+    <div class="thumbs" id="modalThumbs"></div>
+
+    <h3 id="modalTitle"></h3>
+    <p id="modalPrice"></p>
+    <p id="modalDesc"></p>
+  </div>
+</div>
+
+
+<footer>
+  <p>© 2025 Sky Gaming Store. All Rights Reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
