@@ -698,6 +698,7 @@ body {
 .modal {
   backdrop-filter: blur(8px);
   animation: storeFade 0.35s ease;
+
 }
 
 .modal-content {
@@ -706,6 +707,35 @@ body {
   color: var(--store-text);
   border-radius: 16px;
   animation: storePop 0.35s
+}
+.close {
+  position: relative;
+  top: 15px;   /* adjust slightly if needed */
+  right: 15px; /* pulls it in from the edge */
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 0.5;
+}
+
+@media (max-width: 600px) {
+  .modal {
+    align-items: flex-start;
+    padding-top: 24px;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    border-radius: 12px;
+    transform: translateY(0);
+  }
+
+  .close {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
 }
 
 /* ===============================
