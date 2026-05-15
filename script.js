@@ -163,10 +163,10 @@ document.addEventListener("DOMContentLoaded", function () {
       posterButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const filterValue = btn.getAttribute("data-filter");
+      const filterValue = btn.getAttribute("data-filter").toLowerCase();
 
       posterCards.forEach(card => {
-        const cardCategory = card.getAttribute("data-category");
+       const cardCategory = card.getAttribute("data-category").toLowerCase();
 
         if (!cardCategory) return; // safety
 
