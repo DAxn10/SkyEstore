@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  background: #f8f9fb; /* NOT pure white → more premium */
+  color: #111;
+  padding-top: 80px;
+}
+
+/* ================= NAVBAR (FIXED & CONSISTENT) ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* HAMBURGER */
+.menu-icon {
+  display: none;
+  font-sirgb((255, 255, 255)55, 255, 255)8px;
+  cursor: pointer;
+  color: black;
+}
+
+/* ================= BACK BUTTON ================= */
+.product-view {
+  padding: 2px;
+  margin-top: 40px;
+  background-color: white;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 14px;
+  border-radius: 20px;
+
+  background: #ffffff;
+  color: #111;
+  border: 1px solid #ddd;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+/* arrow */
+.back-btn::before {
+  content: "←";
+  font-size: 14px;
+  transition: transform 0.25s ease;
+}
+
+/* hover */
+.back-btn:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.back-btn:hover::before {
+  transform: translateX(-4px);
+}
+
+.card p1 {
+  font-weight: bold;
+  margin-top: 100px;
+  font-size: 20px;
+  font-weight: 200px;
+}
+
+
+
+
+.card h3 {
+  margin-top: 19px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.details {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+.price {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+@media (max-width: 768px) {
+
+  .menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: black;
+}
+
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    background: #ffffff;
+    width: 220px;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+/* ================= GRID ================= */
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  gap: 20px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: stretch;
+
+  /* Desktop default */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ================= CARD ================= */
+.card {
+  width: 100%;
+  text-align: center;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* FRAME */
+.frame {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+
+  /* dark glass look */
+  background: rgba(254, 254, 254, 0.6);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.frame img {
+  width: 100%;
+  display: block;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
+}
+
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: #ffffff;
+  color: black;
+}
+
+.hero h2 {
+  font-size: 28px;
+}
+
+.hero p {
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+/* ================= FILTERS ================= */
+.filters {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* hide scrollbar */
+.filters::-webkit-scrollbar {
+  display: none;
+}
+.filters {
+  scrollbar-width: none;
+}
+
+.filters button {
+  flex: 0 0 22%;
+
+  padding: 8px 6px;
+  font-size: 12px;
+  border-radius: 14px;
+
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.filters button:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+
+  transform: translateY(-2px);
+}
+
+
+/* ================= INFO ================= */
+.info {
+  text-align: center;
+  padding: 40px 20px;
+  background: #111;
+}
+
+.info-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  opacity: 0.8;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  color: black;
+  margin-top: 20px;
+}
+
+/* SEARCH INPUT */
+.navbar input {
+  width: 340px;
+  height: 42px;
+  padding: 0 14px;
+  font-size: 15px;
+  border: 1px solid black;
+  border-radius: 25px;
+  outline: none;
+  margin: 20px;
+}
+
+
+
+/* Tablet */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile */
+/* MOBILE (3 cards fixed) */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+
+  .frame {
+    border-radius: 10px;
+  }
+
+  button {
+    font-size: 11px;
+    padding: 8px;
+  }
+}

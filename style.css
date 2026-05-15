@@ -1,3 +1,4 @@
+
 /* GLOBAL */
 body {
   margin: 0;
@@ -9,7 +10,7 @@ body {
 /* NAVBAR */
 /* NAVBAR */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   background: #f8f8f8;
@@ -49,6 +50,53 @@ body {
   display: none;
   font-size: 28px;
   cursor: pointer;
+}
+
+.store-header {
+  /* Push the header down so it doesn't hide under the nav */
+  padding-top: 70px; 
+  padding-bottom: 10px;
+  margin-left: 30px;
+}
+.store-header h1{
+  margin-bottom: 5px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #111;
+  font-family: 'Orbitron', sans-serif; /* Matches your nav */
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  
+  /* The Button Box */
+  padding: 5px 10px;
+  /* border: 1px solid #000000;
+  border-radius: 4px;  */
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px); /* Lifts up slightly */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Make the arrow move separately */
+.back-btn::before {
+  content: '←';
+  margin-right: 3px;
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover::before {
+  transform: translateX(-4px);
 }
 
 
@@ -996,14 +1044,105 @@ body {
 
 
 /* FOOTER */
-footer {
-  background: #f8f8f8;
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #ddd;
+/* FOOTER */
+.footer{
+    background: linear-gradient(135deg,#0f0f0f,#1a1a1a,#111);
+    color:white;
+    padding:50px 10%;
+    margin-top:50px;
+    border-top:2px solid #7b2ff7;
 }
 
-.topup-section h1{
-  
-  margin-bottom: 5%;
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
 }
+
+.footer-box{
+    flex:1;
+    min-width:220px;
+}
+
+.footer-box h2,
+.footer-box h3{
+    color:#a855f7;
+    margin-bottom:15px;
+}
+
+.footer-box p{
+    color:#bbb;
+    line-height:1.6;
+}
+
+.footer-box a{
+    display:block;
+    color:#ddd;
+    text-decoration:none;
+    margin-bottom:10px;
+    transition:0.3s;
+}
+
+.footer-box a:hover{
+    color:#a855f7;
+    transform:translateX(5px);
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+.social-icons a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 15px;
+    border-radius:8px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+    font-size:14px;
+}
+
+/* Instagram */
+.social-icons a.ig{
+    background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+}
+
+/* TikTok */
+.social-icons a.tt{
+    background:#000;
+    border:1px solid #25f4ee;
+}
+
+/* hover effect */
+.social-icons a:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 15px rgba(168,85,247,0.6);
+}
+
+.footer-bottom{
+    text-align:center;
+    margin-top:40px;
+    border-top:1px solid #333;
+    padding-top:20px;
+    color:#888;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+}
+

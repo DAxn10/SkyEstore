@@ -1,0 +1,192 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+
+
+/* BODY */
+body {
+  background: #ffffff;
+  color: #111;
+  line-height: 1.6;
+  padding-top: 40px;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #f8f8f8;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo img {
+  height: 40px;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* HAMBURGER */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    background: #ffffff;
+    width: 220px;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    display: none;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-links a:hover {
+    background: #f1f1f1;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 70px 20px 40px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #666;
+  font-size: 16px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  padding: 50px;
+}
+
+/* CATEGORY CARDS */
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 30px;
+  text-decoration: none;
+  color: #111;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover glow effect */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,170,255,0.1), transparent 60%);
+  transform: scale(0);
+  transition: 0.4s;
+}
+
+.card:hover::before {
+  transform: scale(1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #00aaff;
+  box-shadow: 0 10px 25px rgba(0, 170, 255, 0.15);
+}
+
+/* CARD TEXT */
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .grid {
+    padding: 20px;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+}
+}

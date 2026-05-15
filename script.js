@@ -146,3 +146,96 @@ window.onclick = function (e) {
     modal.style.display = "none";
   }
 };
+
+/* ================= POSTER PAGE SYSTEM (FIXED) ================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const posterButtons = document.querySelectorAll(".filters button");
+  const posterCards = document.querySelectorAll(".card");
+  const posterSearch = document.querySelector(".navbar input");
+
+  // ✅ FILTER USING data-filter (CORRECT WAY)
+  posterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      // active UI
+      posterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filterValue = btn.getAttribute("data-filter");
+
+      posterCards.forEach(card => {
+        const cardCategory = card.getAttribute("data-category");
+
+        if (!cardCategory) return; // safety
+
+        if (filterValue === "all" || cardCategory.includes(filterValue)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+    });
+  });
+
+  // ✅ SEARCH (works with filter system)
+  if (posterSearch) {
+    posterSearch.addEventListener("input", () => {
+      const searchValue = posterSearch.value.toLowerCase();
+
+      posterCards.forEach(card => {
+        const titleText = card.querySelector("h3").innerText.toLowerCase();
+
+        if (titleText.includes(searchValue)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  }
+
+  console.log("✅ SKY POSTERS: Filters + Search working");
+
+});
+
+
+
+
+ /* ================= TOPUP SELECT SYSTEM ================= */
+
+const topupCards = document.querySelectorAll(".topup-card");
+
+const selectedName = document.getElementById("selectedName");
+const selectedPrice = document.getElementById("selectedPrice");
+const buyBtn = document.getElementById("buyBtn");
+
+topupCards.forEach(card => {
+  card.addEventListener("click", () => {
+
+    // ignore out of stock
+    if (card.classList.contains("out")) return;
+
+    // remove previous active
+    topupCards.forEach(c => c.classList.remove("active"));
+
+    // set active
+    card.classList.add("active");
+
+    // get data
+    const name = card.querySelector("h3").innerText;
+    const priceText = card.querySelector(".price").innerText;
+    const price = priceText.replace("Rs", "").trim();
+
+    // show selected data
+    if (selectedName) selectedName.innerText = name;
+    if (selectedPrice) selectedPrice.innerText = price;
+
+    // Instagram redirect
+    if (buyBtn) {
+      buyBtn.href = "https://instagram.com/sky_storeef";
+    }
+  });
+});
